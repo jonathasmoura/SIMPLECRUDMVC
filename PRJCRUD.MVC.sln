@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 -DATA", "0 -DATA", "{A775C20D-45EA-4693-ACC9-F15B120B99CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- WEB", "1- WEB", "{072ED83C-742C-4C54-B218-CEC6F1E5B2ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIMPLECRUD.MVC", "SIMPLECRUD.MVC\SIMPLECRUD.MVC.csproj", "{4886DAAA-FB64-40FA-B72A-231E9AE08105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIMPLECRUD.DATA", "SIMPLECRUD.DATA\SIMPLECRUD.DATA.csproj", "{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4886DAAA-FB64-40FA-B72A-231E9AE08105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4886DAAA-FB64-40FA-B72A-231E9AE08105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4886DAAA-FB64-40FA-B72A-231E9AE08105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4886DAAA-FB64-40FA-B72A-231E9AE08105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4886DAAA-FB64-40FA-B72A-231E9AE08105} = {072ED83C-742C-4C54-B218-CEC6F1E5B2ED}
+		{7AB9BDF0-DBD2-487C-9AC5-9E81D3D795AF} = {A775C20D-45EA-4693-ACC9-F15B120B99CF}
+	EndGlobalSection
+EndGlobal
