@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form class="form-inline">
+    <label class="sr-only">Nome da Universidade</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="Nome" placeholder="Nome da Universidade">
+
+    <label class="sr-only" for="inlineFormInputName2">Cidade</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="Cidade" placeholder="Cidade">
+
+    <label class="sr-only" for="inlineFormInputName2">UF</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="UF" placeholder="UF">
+
+
+    <button type="button" id="btnFiltrar" class="btn btn-primary">Filtrar</button>
+
+    <input type="hidden" name="pagina" value="1" />
+    <input type="hidden" name="registros" value="5" />
+
+</form>
+<div id="listagemDeUniversidades"></div>
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(configurarControles);
+
+        function configurarControles() {
+            $("#btnPesquisar").click(listarUniversidades);
+            listarUniversidades();
+
+        }
+
+        function paginar(valor) {
+
+            var elementoPagina = $("input[name='pagina']");
+            var paginaAtual = parseInt(elementoPagina.val());
+
+            elementoPagina.val(paginaAtual + valor);
+
+            listarUniversidades();
+
+
+        }
+
+        function listarUniversidades() {
+            $("#listagemDeUniversidades").load("@Url.Action("ListarUniversidade")", $("form").serialize());
+
+        }
+    </script>
+
+}
+
+
+
+
+

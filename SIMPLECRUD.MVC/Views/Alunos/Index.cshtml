@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-success">
+        <span class="glyphicon glyphicon-plus"></span>
+        Criar Aluno
+    </a>
+</p>
+
+<form class="form-inline">
+    <label class="sr-only">Nome</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="Nome" placeholder="Nome do Aluno">
+
+    <label class="sr-only" for="inlineFormInputName2">Curso</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" name="CursoId" placeholder="Curso">
+
+    <button type="button" id="btnFiltrar" class="btn btn-primary">Filtrar</button>
+
+    <input type="hidden" name="pagina" value="1" />
+    <input type="hidden" name="registros" value="5" />
+
+</form>
+
+<div id="listagemDeAlunos"></div>
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(configurarControles);
+
+        function configurarControles() {
+
+            $("#btnFiltrar").click(listarAlunos);
+
+            listarAlunos();
+        }
+
+        //var pagina = 1;
+
+        function paginar(valor) {
+
+            var paginaElemento = $("input[name='pagina']");
+
+            var paginaAtual = parseInt(paginaElemento.val());
+
+            paginaElemento.val(paginaAtual + valor);
+
+            listarAlunos();
+
+            pagina = paginaNova;
+
+        }
+
+        function listarAlunos() {
+            $("#listagemDeAlunos").load("@Url.Action("ListarAlunos")", $("form").serialize());
+        }
+    </script>
+}

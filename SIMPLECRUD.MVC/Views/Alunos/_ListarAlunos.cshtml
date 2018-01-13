@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SIMPLECRUD.MVC.Models.Aluno>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar aluno", "Edit", new { id = item.AlunoId }) |
+                @Html.ActionLink("Detalhes do aluno", "Details", new { id = item.AlunoId }) |
+                @Html.ActionLink("Deletar aluno", "Delete", new { id = item.AlunoId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<nav>
+    <ul class="pager">
+        <li><a href="#" onclick="paginar(-1)">Anterior</a></li>
+        <li><a href="#" onclick="paginar(1)">Próximo</a></li>
+    </ul>
+</nav>
