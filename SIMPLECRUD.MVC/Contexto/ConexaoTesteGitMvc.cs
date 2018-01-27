@@ -22,6 +22,7 @@ namespace SIMPLECRUD.MVC.Contexto
         public DbSet<Universidade> Universidades { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Alns { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

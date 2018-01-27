@@ -1,64 +1,34 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<div class="container" ng-controller="alunosCtrl">
+    <div class="panel panel-info">
+        <div class="panel-heading">Listagem de Alunos</div>
 
-<h2>Index</h2>
+        <table class="table table-bordered">
+            <thead style="background-color: burlywood">
+                <tr>
+                    <th>AlunoId</th>
+                    <th>Nome</th>
+                    <th>CursoId</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
 
-<p>
-    <a href="@Url.Action("Create")" class="btn btn-success">
-        <span class="glyphicon glyphicon-plus"></span>
-        Criar Aluno
-    </a>
-</p>
-
-<form class="form-inline">
-    <label class="sr-only">Nome</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" name="Nome" placeholder="Nome do Aluno">
-
-    <label class="sr-only" for="inlineFormInputName2">Curso</label>
-    <input type="text" class="form-control mb-2 mr-sm-2" name="CursoId" placeholder="Curso">
-
-    <button type="button" id="btnFiltrar" class="btn btn-primary">Filtrar</button>
-
-    <input type="hidden" name="pagina" value="1" />
-    <input type="hidden" name="registros" value="5" />
-
-</form>
-
-<div id="listagemDeAlunos"></div>
-
+            <tbody>
+                <tr ng-repeat="aln in Alunos">
+                    <td>{{aln.AlunoId}}</td>
+                    <td>{{aln.Nome}}</td>
+                    <td>{{aln.CursoId}}</td>
+                    <td>{{aln.Curso}}</td>
+                    <td style="width: 200px">
+                        <a href="#" class="btn btn-info">Atualizar</a>
+                        <a href="#" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 @section scripts{
-
-    <script type="text/javascript">
-        $(document).ready(configurarControles);
-
-        function configurarControles() {
-
-            $("#btnFiltrar").click(listarAlunos);
-
-            listarAlunos();
-        }
-
-        //var pagina = 1;
-
-        function paginar(valor) {
-
-            var paginaElemento = $("input[name='pagina']");
-
-            var paginaAtual = parseInt(paginaElemento.val());
-
-            paginaElemento.val(paginaAtual + valor);
-
-            listarAlunos();
-
-            pagina = paginaNova;
-
-        }
-
-        function listarAlunos() {
-            $("#listagemDeAlunos").load("@Url.Action("ListarAlunos")", $("form").serialize());
-        }
-    </script>
+    <script src="~/App_AngularJs/Alunos/Module.js"></script>
+    <script src="~/App_AngularJs/Alunos/Service.js"></script>
+    <script src="~/App_AngularJs/Alunos/Controller.js"></script>
 }

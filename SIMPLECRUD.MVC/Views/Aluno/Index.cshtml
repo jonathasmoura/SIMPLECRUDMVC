@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SIMPLECRUD.MVC.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="alunos panel panel-primary">
+    <div>Alunos</div>
+    <div class="panel-body">
+
+
+        <p>
+            @Html.ActionLink("Criar Aluno", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <td rowspan="3">
+                    <a class="thumbnail-border">
+                        <i class="fa fa-picture-o" aria-hidden="true" width="150" height="150"></i>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curso.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagem)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curso.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imagem)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.AlunoId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.AlunoId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.AlunoId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

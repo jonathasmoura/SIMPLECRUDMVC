@@ -10,6 +10,8 @@ namespace SIMPLECRUD.MVC.Models
     {
         public int AlunoId { get; set; }
         public string Nome { get; set; }
+        public byte[] Imagem { get; set; }
+        public string ImagemTipo { get; set; }
         public int CursoId { get; set; }
 
         [ForeignKey("CursoId")]
