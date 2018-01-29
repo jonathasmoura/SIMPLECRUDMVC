@@ -11,14 +11,14 @@ namespace SIMPLECRUD.MVC.Controllers
     public class AlunosController : Controller
     {
 
-      //  public ActionResult Index()
-       // {
+        public ActionResult Index()
+        {
 
 
-          //  return View();
-       // }
+            return View();
+        }
 
-        #region
+        #region Método que lista todos Alunos
         public JsonResult ListarAlunos()
         {
             using (var db = new ConexaoTesteGitMvc())
@@ -32,7 +32,7 @@ namespace SIMPLECRUD.MVC.Controllers
 
         #region Método para criar um novo Aluno - Create
 
-        public JsonResult CriarAluno(Aluno aluno)
+        public JsonResult InserirAlunoNovo(Aluno aluno)
         {
             if (aluno != null)
             {
